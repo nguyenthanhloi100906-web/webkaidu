@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: #f5f7fb;
+    color: #003a8c;
+  }
+  
+  .container {
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  /* ================== TOP BAR ================== */
+  .topbar {
+    background: #0057d9;
+    color: white;
+    padding: 6px 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    align-items: center;
+  }
+  
+  .topbar-right a {
+    color: white;
+    margin-right: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .topbar-icons {
+    display: inline-flex;
+    gap: 10px;
+  }
+  
+  .icon-btn img {
+    width: 20px;
+  }
+  
+  /* ================== HEADER ================== */
+  .main-header {
+    background: white;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e6ef;
+  }
+  
+  .header-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    height: 48px;
+  }
+  
+  /* NAV */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .nav-item {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .arrow {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  
+  /* DROPDOWN */
+  .dropdown-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: white;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    min-width: 320px;
+    z-index: 999;
+    display: none;
+    gap: 30px;
+  }
+  
+  .dropdown-col h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  .dropdown-col a {
+    display: block;
+    text-decoration: none;
+    color: #003a8c;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+  
+  /* ICONS */
+  .header-icons {
+    display: flex;
+    gap: 14px;
+  }
+  
+  /* ================== SLIDER ================== */
+  .slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    transition: 0.5s;
+  }
+  
+  .slide {
+    min-width: 100%;
+    display: none;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  .slide img {
+    width: 100%;
+  }
+  
+  .slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 50%;
+    color: #003a8c;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  /* ================== AWARDS ================== */
+  .awards {
+    display: flex;
+    justify-content: space-around;
+    background: #003a8c;
+    color: white;
+    padding: 20px 0;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  /* ================== GALLERY ================== */
+  .gallery {
+    display: flex;
+    margin: 40px 0;
+    gap: 10px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* ================== INNOVATION ================== */
+  .innovation {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .innovation h2 {
+    font-size: 32px;
+  }
+  
+  .innovation p {
+    margin-top: 10px;
+    width: 600px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #003a8c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  .innovation-img {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* ================== NET ZERO ================== */
+  .netzero h2 {
+    text-align: center;
+    font-size: 32px;
+  }
+  
+  .netzero p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .netzero-grid {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  
+  .netzero-grid .item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* ================== JOIN ================== */
+  .join {
+    background: #e7f0ff;
+    padding: 60px 0;
+  }
+  
+  .join-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  .join-box h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .join-box ul {
+    margin-bottom: 20px;
+  }
+  
+  .join-box li {
+    margin-bottom: 10px;
+  }
+  
+  .big-btn {
+    width: 200px;
+  }
+  
+  /* ================== FOOTER ================== */
+  .footer {
+    background: white;
+    padding-top: 50px;
+  }
+  
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+  }
+  
+  .footer-flex h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-flex a {
+    display: block;
+    text-decoration: none;
+    color: #003a8c;
+    margin-bottom: 6px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .footer-bottom h1 {
+    font-size: 60px;
+  }
+  /* ============ FOOTER ============ */
+
+.vm-footer {
+    background: #ffffff;
+    padding-top: 50px;
+  }
+  
+  /* TOP SECTION */
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding-bottom: 40px;
+  }
+  
+  /* COMPANY INFO */
+  .footer-company h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #003a8c;
+  }
+  
+  .footer-company p {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  
+  .footer-social img {
+    width: 22px;
+    cursor: pointer;
+  }
+  
+  /* MENU COLS */
+  .footer-col h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #003a8c;
+  }
+  
+  .footer-col a {
+    display: block;
+    text-decoration: none;
+    color: #003a8c;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .footer-col a:hover {
+    text-decoration: underline;
+  }
+  
+  /* LANGUAGE + CERTIFICATION */
+  .footer-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .lang-btn {
+    padding: 8px 14px;
+    border: 1px solid #003a8c;
+    background: white;
+    color: #003a8c;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .cert-box img {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+  
+  /* LEGAL TEXT */
+  .footer-legal {
+    font-size: 12px;
+    color: #555;
+    padding-bottom: 40px;
+  }
+  
+  /* BIG LOGO */
+  .footer-big-logo {
+    text-align: center;
+    padding: 40px 0;
+    color: #003a8c;
+  }
+  
+  .footer-big-logo h1 {
+    font-size: 80px;
+    font-weight: bold;
+  }
+  
+  .footer-big-logo span {
+    font-size: 26px;
+  }
+  /* ===== BIG FOOTER LOGO ===== */
+
+.footer-big-logo {
+    text-align: center;
+    padding: 60px 0 100px; /* giống Figma: nhiều khoảng trắng */
+    color: #004A99; /* màu xanh thương hiệu Vinamilk */
+  }
+  
+  .footer-big-logo .footer-logo {
+    font-size: 140px;        /* RẤT LỚN – giống ảnh */
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;    /* giúp chữ nhìn đậm và chắc giống Figma */
+  }
+  
+  .footer-est-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;              /* khoảng cách lớn như ảnh */
+  }
+  
+  .footer-est {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  .footer-year {
+    font-size: 48px;
+    font-weight: 800;
+  }
+  
