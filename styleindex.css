@@ -17,33 +17,58 @@
   }
   
   /* ================== TOP BAR ================== */
-  .topbar {
-    background: #0057d9;
+.topbar {
+    background: #002c91; /* Màu xanh đậm hơn một chút so với ảnh cũ */
     color: white;
-    padding: 6px 18px;
+    padding: 8px 160px; /* Thêm padding ngang lớn hơn */
     display: flex;
-    justify-content: space-between;
-    font-size: 14px;
+    /* Đẩy nội dung ra hai bên */
+    justify-content: space-between; 
     align-items: center;
-  }
-  
-  .topbar-right a {
+    font-size: 14px;
+}
+
+/* 2. Điều chỉnh `.topbar-left` (Thông báo) */
+.topbar-left {
+    /* Đảm bảo chữ "Miễn phí vận chuyển..." nằm sát bên trái */
+    margin-right: auto;
+}
+
+/* 3. Điều chỉnh `.topbar-right` (Liên kết và Icon) */
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-right a {
     color: white;
-    margin-right: 20px;
+    margin-right: 25px; /* Khoảng cách giữa các liên kết */
     font-size: 14px;
     text-decoration: none;
     font-weight: 500;
-  }
-  
-  .topbar-icons {
-    display: inline-flex;
-    gap: 10px;
-  }
-  
-  .icon-btn img {
+}
+
+/* Điều chỉnh khoảng cách icon */
+.topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Khoảng cách giữa các icon */
+}
+
+/* Điều chỉnh màu icon và nút bấm (quan trọng để icon màu trắng) */
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.icon-btn img {
+    /* Đảm bảo icon có màu trắng (giả sử icon là SVG hoặc Font Icon) */
     width: 20px;
-  }
-  
+    /* Nếu bạn dùng SVG, có thể dùng filter hoặc chỉnh màu SVG trực tiếp */
+    filter: brightness(0) invert(1); 
+}
 /* --- CSS Reset và Cài đặt Font cơ bản (Tùy chọn) --- */
 * {
   box-sizing: border-box;
@@ -60,31 +85,34 @@ body {
 /* 1. MAIN HEADER VÀ CONTAINER */
 .main-header {
   /* Nền trắng, viền xanh nhạt giống như hình ảnh thứ 2 */
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd; /* Viền mỏng dưới đáy */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bóng nhẹ */
-  width: 100%;
+    background-color: #ffffff; 
+    border-bottom: 1px solid #c8d3e6; /* Viền mỏng màu xanh/tím nhạt */
+    width: 100%;
 }
 
 .header-container {
-  display: flex;
-  /* Căn giữa nội dung, tùy chỉnh độ rộng tối đa theo thiết kế của bạn */
-  max-width: 1200px;
-  margin: 0 auto; /* Đảm bảo header-container được căn giữa trang */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  padding: 10px 20px;
-  height: 60px; /* Chiều cao cố định */
+    display: flex;
+    /* Căn giữa toàn bộ nội dung trong container */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    align-items: center; 
+    padding: 10px 0px; /* Thêm padding ngang */
+    height: 70px; /* Tăng chiều cao */
+}
+
+.header-icons {
+    display: none; 
 }
 
 /* 2. LOGO */
 .logo {
   /* Đảm bảo logo nằm sát bên trái */
-  margin-right: 30px; /* Thêm khoảng cách giữa logo và menu */
+  margin-right: 40px; /* Thêm khoảng cách giữa logo và menu */
 }
 
 .logo img {
   /* Điều chỉnh kích thước logo cho phù hợp */
-  height: 60px;
+  height: 50px;
 }
 
 /* 3. MAIN NAV (MENU CHÍNH) */
@@ -97,12 +125,12 @@ body {
 .nav-item {
   /* Thiết lập các mục menu chính */
   position: relative;
-  padding: 0 15px; /* Khoảng cách giữa các mục */
+  padding: 0 16px; /* Khoảng cách giữa các mục */
   cursor: pointer;
   line-height: 40px; /* Căn giữa văn bản theo chiều dọc */
-  font-size: 14px;
-  font-weight: bold;
-  color: #004a80; /* Màu chữ xanh navy/xanh đậm */
+  font-size: 15px;
+  font-weight: 500;
+  color: #003a8c; /* Màu chữ menu (xanh Vinamilk) */
   transition: color 0.2s ease;
   height: 100%; /* Đảm bảo khu vực click rộng */
 }
