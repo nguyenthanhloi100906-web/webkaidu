@@ -44,84 +44,148 @@
     width: 20px;
   }
   
-  /* ================== HEADER ================== */
-  .main-header {
-    background: white;
-    padding: 12px 0;
-    border-bottom: 1px solid #e0e6ef;
-  }
-  
-  .header-container {
-    width: 90%;
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .logo img {
-    height: 48px;
-  }
-  
-  /* NAV */
-  .main-nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    font-size: 15px;
-    font-weight: 600;
-  }
-  
-  .nav-item {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .arrow {
-    font-size: 12px;
-    margin-left: 4px;
-  }
-  
-  /* DROPDOWN */
-  .dropdown-menu {
-    position: absolute;
-    top: 120%;
-    left: 0;
-    background: white;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    border-radius: 8px;
-    display: none;
-    min-width: 320px;
-    z-index: 999;
-    display: none;
-    gap: 30px;
-  }
-  
-  .dropdown-col h4 {
-    font-size: 14px;
-    margin-bottom: 6px;
-    font-weight: bold;
-  }
-  
-  .dropdown-col a {
-    display: block;
-    text-decoration: none;
-    color: #003a8c;
-    margin-bottom: 4px;
-    font-size: 14px;
-  }
-  
-  .nav-item.dropdown:hover .dropdown-menu {
-    display: flex;
-  }
-  
-  /* ICONS */
-  .header-icons {
-    display: flex;
-    gap: 14px;
-  }
+/* --- CSS Reset và Cài đặt Font cơ bản (Tùy chọn) --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* -------------------------------------------------- */
+
+/* 1. MAIN HEADER VÀ CONTAINER */
+.main-header {
+  /* Nền trắng, viền xanh nhạt giống như hình ảnh thứ 2 */
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd; /* Viền mỏng dưới đáy */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bóng nhẹ */
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  /* Căn giữa nội dung, tùy chỉnh độ rộng tối đa theo thiết kế của bạn */
+  max-width: 1200px;
+  margin: 0 auto; /* Đảm bảo header-container được căn giữa trang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 10px 20px;
+  height: 60px; /* Chiều cao cố định */
+}
+
+/* 2. LOGO */
+.logo {
+  /* Đảm bảo logo nằm sát bên trái */
+  margin-right: 30px; /* Thêm khoảng cách giữa logo và menu */
+}
+
+.logo img {
+  /* Điều chỉnh kích thước logo cho phù hợp */
+  height: 60px;
+}
+
+/* 3. MAIN NAV (MENU CHÍNH) */
+.main-nav {
+  display: flex;
+  align-items: center;
+  /* BỎ margin-left: auto; để menu nằm sát logo */
+}
+
+.nav-item {
+  /* Thiết lập các mục menu chính */
+  position: relative;
+  padding: 0 15px; /* Khoảng cách giữa các mục */
+  cursor: pointer;
+  line-height: 40px; /* Căn giữa văn bản theo chiều dọc */
+  font-size: 14px;
+  font-weight: bold;
+  color: #004a80; /* Màu chữ xanh navy/xanh đậm */
+  transition: color 0.2s ease;
+  height: 100%; /* Đảm bảo khu vực click rộng */
+}
+
+.nav-item:hover {
+  color: #007bff; /* Màu xanh sáng hơn khi hover */
+}
+
+.arrow {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* 4. DROPDOWN MENU */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Đặt menu con ngay dưới menu cha */
+  left: 0; /* Menu con bắt đầu từ mép trái của menu cha */
+  /* Tạo kiểu cho hộp dropdown */
+  background-color: white;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 550px; /* Đặt chiều rộng đủ lớn cho 3 cột */
+  z-index: 999;
+  /* Layout 3 cột */
+  display: flex; /* Quan trọng để hiển thị 3 cột */
+  gap: 30px;
+  /* Ẩn ban đầu */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  transform: translateY(10px); /* Hiệu ứng trượt xuống nhẹ */
+}
+
+.dropdown-col {
+  /* Mỗi cột chiếm 1/3 chiều rộng */
+  flex-basis: 33.33%;
+}
+
+.dropdown-col h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333; /* Màu chữ cho tiêu đề cột */
+}
+
+.dropdown-col a {
+  display: block;
+  text-decoration: none;
+  color: #003a8c; /* Màu chữ cho liên kết con */
+  margin-bottom: 4px;
+  font-size: 14px;
+  padding: 2px 0;
+}
+
+.dropdown-col a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* 5. HIỆN DROPDOWN KHI HOVER */
+.nav-item.dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0); /* Đưa về vị trí ban đầu */
+}
+
+/* 6. ICONS */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  /* Đẩy icon ra xa menu (nếu cần) */
+  margin-left: auto;
+}
+
+/* Tùy chỉnh Icon Placeholder (Nếu có) */
+.header-icons i {
+  font-size: 20px;
+  color: #004a80;
+  cursor: pointer;
+}
   
   /* ================== SLIDER ================== */
   .slider {
@@ -146,28 +210,41 @@
   
   .slide img {
     width: 100%;
+    display: block;
   }
   
   .slide-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 35px;
-    background: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 16px;
-    border-radius: 50%;
-    color: #003a8c;
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px; /* Kích thước icon */
+  font-weight: 300;
+  /* Làm cho nút có nền trong suốt */
+  background: rgba(255, 255, 255, 0.8); /* Màu trắng trong suốt mờ */
+  /* Loại bỏ border, chỉ có màu icon */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 8px 12px; /* Giảm padding để nút nhỏ hơn */
+  border-radius: 4px; /* Bo góc nhẹ, không phải hình tròn */
+  color: #004a80; /* Màu chữ/icon xanh đậm */
+  z-index: 10;
+  /* Hiệu ứng mờ dần khi không tương tác (tùy chọn) */
+  opacity: 0.8;
+  transition: opacity 0.3s, background 0.3s;
+}
+
+.slide-btn:hover {
+  opacity: 1;
+  background: white;
+}
+
+.prev {
+  left: 20px; /* Khoảng cách từ mép trái (có thể tăng thêm) */
+}
+
+.next {
+  right: 20px; /* Khoảng cách từ mép phải (có thể tăng thêm) */
+}
   
   /* ================== AWARDS ================== */
   .awards {
